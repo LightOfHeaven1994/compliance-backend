@@ -26,6 +26,7 @@ describe V2::TestResultsController do
 
   let(:current_user) { FactoryBot.create(:v2_user) }
   let(:rbac_allowed?) { true }
+  let(:meta_keys) { %w[total limit offset tags] }
 
   before do
     request.headers['X-RH-IDENTITY'] = current_user.account.identity_header.raw

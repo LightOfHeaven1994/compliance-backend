@@ -86,6 +86,10 @@ module V2
       where(groups.include?([]) ? grouped.or(ungrouped) : grouped)
     }
 
+    def self.taggable?
+      true
+    end
+
     def display_name
       attributes['system__display_name'] || try(:system)&.display_name
     end
